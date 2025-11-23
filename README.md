@@ -1,3 +1,20 @@
+EXP 11 RETAINED MSG AND CLEAN SESSION
+
+
+    mosquitto_pub -h localhost -t lab/retained -m "Hello retained" -r
+    mosquitto_sub -h localhost -t lab/retained -c -i "clean-client"
+    mosquitto_sub -h localhost -t lab/retained -q 1 --disable-clean-session -i "persist-client"
+    mosquitto_pub -h localhost -t lab/retained -n -r
+    mosquitto_sub -h localhost -t lab/retained
+
+
+
+EXP 10 SENDING AND RECEIVING MQTT MSG
+
+1.  mosquitto_sub -h localhost -t test/topic
+2.  mosquitto_pub -h localhost -t test/topic -m "MOHIT"
+
+
 EXP 9 (Bluetooth Home automation)
 
     const int LIGHT_PIN = 8;
